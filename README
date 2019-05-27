@@ -1,0 +1,40 @@
+CRMFinder is an algorithm to find cis-regulatory modules based on motifs in two
+homologous intergenic regions. These motifs can be found based on conservation or
+position weight matrices of known TFBSs, which should be stored in a file called
+pwm.txt.
+
+ Use GenomeCRMFinder gene1ID gene2ID sequence1.fasta sequence2.fasta genes1.fasta genes2.fasta occupancy.bed
+
+ Gene IDs are for two homologous genes.
+ Sequence data should be in fasta format.
+ Genes data should be the corresponding gff3 file.
+ Occupancy is an optional argument.
+
+ Before running CRMFinder the parameters should be set in the parameters.txt file
+
+ method can be known or conserved
+ score is the score cutoff
+ region is the length of the CRM
+ length is the length of the conserved motif
+ likelihood is the likelihood cutoff for known motifs
+ a is the weight of percent matching
+ b is the weight of the distance score
+ c is the weight of the order score
+ d is the weight of average nucleasome occupancy
+
+ Good parameters are:
+ method:conserved
+ score:4
+ region:120
+ length:8
+ likelihood:-7
+ a:10
+ b:5
+ c:2
+ d:1
+
+ Example run:
+ python CRMFinder.py 551207 468121 data/CI_HX2-4.fasta data/CS_HX2-4.fasta data/CI_HX2-4.gff3 data/CS_HX2-4.gff3 data/CI_HX2-4.bed
+
+
+ CRMFinder was written by William Colgan and Pravadh Singh as a CS68 final project.

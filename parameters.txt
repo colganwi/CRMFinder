@@ -1,0 +1,10 @@
+method:conserved
+score:6
+region:149
+length:7
+likelihood:-7
+a:10
+b:2
+c:5
+d:0
+e:1
